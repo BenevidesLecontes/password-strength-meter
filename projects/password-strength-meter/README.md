@@ -1,4 +1,4 @@
-# Password Strength Meter For angular 6
+# Password Strength Meter For angular 7
 
 To display the strength of the password with a visual feedback.
 
@@ -21,7 +21,7 @@ How then is password strength measured? `Dropbox developed an algorithm for a re
 **Step 1:** Since this lib was depending upon the [zxcvbn](https://github.com/dropbox/zxcvbn) lib, install it first
 
 ```sh
-npm install zxcvbn@4.4.2 --save
+npm install @contentpass/zxcvbn --save
 ```
 
 **Step 2:** Install password-strength-meter
@@ -30,7 +30,8 @@ npm install zxcvbn@4.4.2 --save
 npm install angular-password-strength-meter --save
 ```
 
-**Step 3:** Import Password Strength Meter Module into your app module
+**Step 3:** Import Password Strength Meter Module into your app module.
+**Obs:** Use `forRoot(config)` to pass any config to override messages or any zxcvbn config
 
 ```ts
 ....

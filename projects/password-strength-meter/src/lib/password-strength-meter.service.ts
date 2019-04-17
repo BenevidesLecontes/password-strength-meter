@@ -1,12 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable, Optional} from '@angular/core';
 
-import * as zxcvbn_ from 'zxcvbn';
+import * as zxcvbn_ from '@contentpass/zxcvbn';
+import {CONFIG_TOKEN} from './config/configToken';
+import {PasswordStrengthConfig} from './config/password-strength-config';
 
 const zxcvbn = zxcvbn_;
 
 @Injectable()
 export class PasswordStrengthMeterService {
-  constructor() {}
+  constructor(
+    @Optional() @Inject(CONFIG_TOKEN) private configToken: PasswordStrengthConfig
+  ) {
+  }
 
   /**
    *  this will return the password strength score in number
@@ -19,7 +24,7 @@ export class PasswordStrengthMeterService {
    *  @param password
    */
   score(password): number {
-    const result = zxcvbn(password);
+    const result = this.configToken ? zxcvbn(password, this.configToken) : zxcvbn(password, this.configToken);
     return result.score;
   }
 
@@ -29,8 +34,10 @@ export class PasswordStrengthMeterService {
    *
    * @param password
    */
-  scoreWithFeedback(password): { score: number; feedback: { suggestions: string[]; warning: string } } {
-    const result = zxcvbn(password);
-    return { score: result.score, feedback: result.feedback };
+  scoreWithFeedback(
+    password
+  ): { score: number; feedback: { suggestions: string[]; warning: string } } {
+    const result = this.configToken ? zxcvbn(password, this.configToken) : zxcvbn(password, this.configToken);
+    return {score: result.score, feedback: result.feedback};
   }
 }
