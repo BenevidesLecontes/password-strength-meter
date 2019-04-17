@@ -1,4 +1,4 @@
-interface FeedBackMessages {
+export interface FeedbackMessages {
   use_a_few_words?: string;
   no_need_for_mixed_chars?: string;
   uncommon_words_are_better?: string;
@@ -28,6 +28,6 @@ interface FeedBackMessages {
 }
 
 export interface PasswordStrengthConfig {
-  feedback_messages: FeedBackMessages;
+  feedback_messages: FeedbackMessages;
   [key: string]: any;
 }

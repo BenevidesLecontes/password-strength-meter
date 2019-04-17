@@ -5,3 +5,4 @@
 export * from './lib/password-strength-meter.service';
 export * from './lib/password-strength-meter.component';
 export * from './lib/password-strength-meter.module';
+export * from './lib/config/password-strength-config';
