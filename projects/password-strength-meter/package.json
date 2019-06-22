@@ -1,15 +1,15 @@
 {
   "name": "@benevideschissanga/angular-password-strength-meter",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^7.0.0-rc.0 || ^7.2.13",
-    "@angular/core": "^7.0.0-rc.0 || ^7.2.13",
+    "@angular/common": "^8.0.2 || ^8.x.x",
+    "@angular/core": "^8.0.2 || ^8.x.x",
     "@contentpass/zxcvbn": "4.4.3",
     "@types/zxcvbn": "4.4.0"
   },
   "keywords": [
-    "angular 7",
+    "angular 8",
     "password-strength",
     "password-strength-component",
     "password-strength-meter",
