@@ -27,7 +27,7 @@ npm install @contentpass/zxcvbn --save
 **Step 2:** Install password-strength-meter
 
 ```sh
-npm install angular-password-strength-meter --save
+npm install @benevideschissanga/angular-password-strength-meter --save
 ```
 
 **Step 3:** Import Password Strength Meter Module into your app module.
